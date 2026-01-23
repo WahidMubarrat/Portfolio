@@ -17,7 +17,7 @@ const Hero = () => {
                         <div className="relative group">
                             <div className="w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-3xl overflow-hidden glass p-2 shadow-2xl hover:shadow-emerald-500/30 transition-all duration-500">
                                 <img 
-                                    src="/Pp/PXL_20251020_100043024.jpg" 
+                                    src="Pp/PXL_20251020_100043024.jpg" 
                                     alt="Wahid Mubarrat" 
                                     className="w-full h-full object-cover rounded-2xl"
                                 />
