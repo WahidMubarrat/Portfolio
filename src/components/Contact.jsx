@@ -15,7 +15,7 @@ const Contact = () => {
     return (
         <>
             {/* Right sidebar with social icons */}
-            <div className="fixed right-0 top-0 h-screen flex items-center z-50">
+            <div className="fixed right-0 top-0 h-screen flex items-center z-50 contact-sidebar">
                 <div className="flex flex-col gap-6 pr-8">
                     {socialLinks.map((social, index) => {
                         const IconComponent = social.icon;

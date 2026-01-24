@@ -3,7 +3,7 @@ import {
     SiHtml5, SiCss3, SiJavascript, SiReact, SiNodedotjs, SiExpress, 
     SiMongodb, SiPostgresql, SiMysql, SiOracle, SiTailwindcss, 
     SiGit, SiGithub, SiDocker, SiFastapi, SiFigma,
-    SiPython, SiC, SiCplusplus
+    SiPython, SiC, SiCplusplus, SiVite, SiNeo4J, SiCreatereactapp, SiAutocad
 } from 'react-icons/si';
 import { FaJava } from 'react-icons/fa';
 import { HiChevronDown } from 'react-icons/hi';
@@ -16,18 +16,22 @@ const Skills = () => {
         { name: 'CSS', icon: SiCss3, color: '#1572B6' },
         { name: 'JavaScript', icon: SiJavascript, color: '#F7DF1E' },
         { name: 'React', icon: SiReact, color: '#61DAFB' },
+        { name: 'Vite', icon: SiVite, color: '#646CFF' },
+        { name: 'Create React App', icon: SiCreatereactapp, color: '#09D3AC' },
         { name: 'Node.js', icon: SiNodedotjs, color: '#339933' },
         { name: 'Express.js', icon: SiExpress, color: '#000000' },
         { name: 'MongoDB', icon: SiMongodb, color: '#47A248' },
         { name: 'PostgreSQL', icon: SiPostgresql, color: '#4169E1' },
         { name: 'MySQL', icon: SiMysql, color: '#4479A1' },
         { name: 'Oracle', icon: SiOracle, color: '#F80000' },
+        { name: 'Neo4j', icon: SiNeo4J, color: '#008CC1' },
         { name: 'Tailwind CSS', icon: SiTailwindcss, color: '#06B6D4' },
         { name: 'Git', icon: SiGit, color: '#F05032' },
         { name: 'GitHub', icon: SiGithub, color: '#181717' },
         { name: 'Docker', icon: SiDocker, color: '#2496ED' },
         { name: 'FastAPI', icon: SiFastapi, color: '#009688' },
         { name: 'Figma', icon: SiFigma, color: '#F24E1E' },
+        { name: 'AutoCAD', icon: SiAutocad, color: '#E51937' },
     ];
 
     const programmingLanguages = [
@@ -45,6 +49,7 @@ const Skills = () => {
 
     const softSkills = [
         { name: 'Communication', icon: '💬', description: 'Clear and effective verbal and written communication' },
+        { name: 'Speaking & Presentation', icon: '🎤', description: 'Confident public speaking and engaging presentations' },
         { name: 'Teamwork', icon: '🤝', description: 'Collaborative work with diverse teams' },
         { name: 'Problem Solving', icon: '🧩', description: 'Analytical thinking and creative solutions' },
         { name: 'Time Management', icon: '⏰', description: 'Efficient prioritization and deadline management' },
@@ -53,7 +58,7 @@ const Skills = () => {
     ];
 
     const whatICanDo = [
-        { title: 'Web Development', icon: '🌐', description: 'Building responsive and modern web applications' },
+        { title: 'Full Stack Development', icon: '🌐', description: 'Building responsive and modern web applications' },
         { title: 'Desktop Applications', icon: '💻', description: 'Creating cross-platform desktop software' },
         { title: 'UI/UX Design', icon: '✨', description: 'Designing intuitive user interfaces' },
         { title: 'API Development', icon: '🔗', description: 'Building RESTful APIs and backend services' },
