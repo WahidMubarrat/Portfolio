@@ -78,7 +78,7 @@ const Skills = () => {
                                     className="bg-white/50 rounded-xl p-4 text-center group hover:bg-white/80 hover:shadow-md transition-all duration-300"
                                 >
                                     <div className="text-3xl mb-3">{item.icon}</div>
-                                    <h4 className="text-base font-semibold text-gray-800 mb-2 group-hover:text-emerald-600 transition-colors">
+                                    <h4 className="text-base font-semibold text-gray-800 mb-2 group-hover:text-blue-600 transition-colors">
                                         {item.title}
                                     </h4>
                                     <p className="text-gray-600 text-xs">{item.description}</p>
@@ -91,7 +91,7 @@ const Skills = () => {
                     <div className="flex justify-start mb-6 pb-6 border-b border-gray-200">
                         <button
                             onClick={() => setIsExpanded(!isExpanded)}
-                            className="flex items-center gap-2 px-6 py-2 bg-white/50 rounded-xl text-gray-700 hover:bg-white/80 hover:text-emerald-600 hover:shadow-md transition-all duration-300"
+                            className="flex items-center gap-2 px-6 py-2 bg-white/50 rounded-xl text-gray-700 hover:bg-white/80 hover:text-blue-600 hover:shadow-md transition-all duration-300"
                         >
                             <span className="font-medium text-sm">
                                 {isExpanded ? 'Show Less' : 'View More Skills'}
@@ -114,7 +114,7 @@ const Skills = () => {
                                                 className="w-12 h-12 mb-2 group-hover:scale-110 transition-transform duration-300"
                                                 style={{ color: skill.color }}
                                             />
-                                            <span className="text-xs text-gray-700 font-medium text-center group-hover:text-emerald-600 transition-colors">
+                                            <span className="text-xs text-gray-700 font-medium text-center group-hover:text-blue-600 transition-colors">
                                                 {skill.name}
                                             </span>
                                         </div>
@@ -134,7 +134,7 @@ const Skills = () => {
                                                 className="w-12 h-12 mb-2 group-hover:scale-110 transition-transform duration-300"
                                                 style={{ color: lang.color }}
                                             />
-                                            <span className="text-xs text-gray-700 font-medium text-center group-hover:text-emerald-600 transition-colors">
+                                            <span className="text-xs text-gray-700 font-medium text-center group-hover:text-blue-600 transition-colors">
                                                 {lang.name}
                                             </span>
                                         </div>
@@ -154,7 +154,7 @@ const Skills = () => {
                                     >
                                         <div className="flex items-center gap-3 mb-2">
                                             <span className="text-2xl">{skill.icon}</span>
-                                            <h4 className="text-base font-semibold text-gray-800 group-hover:text-emerald-600 transition-colors">
+                                            <h4 className="text-base font-semibold text-gray-800 group-hover:text-blue-600 transition-colors">
                                                 {skill.name}
                                             </h4>
                                         </div>
@@ -175,11 +175,11 @@ const Skills = () => {
                                     >
                                         <div className="flex items-center gap-4">
                                             <span className="text-3xl">{lang.flag}</span>
-                                            <span className="text-base font-medium text-gray-800 group-hover:text-emerald-600 transition-colors">
+                                            <span className="text-base font-medium text-gray-800 group-hover:text-blue-600 transition-colors">
                                                 {lang.name}
                                             </span>
                                         </div>
-                                        <span className="px-3 py-1 rounded-full text-xs font-medium bg-emerald-500/20 text-emerald-700">
+                                        <span className="px-3 py-1 rounded-full text-xs font-medium bg-purple-500/20 text-purple-700">
                                             {lang.level}
                                         </span>
                                     </div>

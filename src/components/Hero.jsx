@@ -5,9 +5,9 @@ const Hero = () => {
         <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden px-4">
             {/* Background decoration */}
             <div className="absolute inset-0 overflow-hidden">
-                <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-emerald-400/30 rounded-full blur-3xl animate-float"></div>
-                <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-green-400/25 rounded-full blur-3xl animate-float" style={{ animationDelay: '1s' }}></div>
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-teal-300/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
+                <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-blue-400/30 rounded-full blur-3xl animate-float"></div>
+                <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-400/25 rounded-full blur-3xl animate-float" style={{ animationDelay: '1s' }}></div>
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-indigo-300/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
             </div>
 
             <div className="max-w-7xl mx-auto w-full z-10">
@@ -15,20 +15,20 @@ const Hero = () => {
                     {/* Left Side - Picture */}
                     <div className="flex justify-center md:justify-end fade-in-up">
                         <div className="relative group">
-                            <div className="w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-3xl overflow-hidden glass p-2 shadow-2xl hover:shadow-emerald-500/30 transition-all duration-500">
+                            <div className="w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-3xl overflow-hidden glass p-2 shadow-2xl hover:shadow-blue-500/30 transition-all duration-500">
                                 <img 
                                     src="Pp/PXL_20251020_100043024.jpg" 
                                     alt="Wahid Mubarrat" 
                                     className="w-full h-full object-cover rounded-2xl"
                                 />
                             </div>
-                            <div className="absolute -inset-4 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-3xl blur-xl opacity-20 group-hover:opacity-40 transition-opacity -z-10"></div>
+                            <div className="absolute -inset-4 bg-gradient-to-r from-blue-500 to-purple-500 rounded-3xl blur-xl opacity-20 group-hover:opacity-40 transition-opacity -z-10"></div>
                         </div>
                     </div>
 
                     {/* Right Side - About Box */}
                     <div className="fade-in-up" style={{ animationDelay: '0.3s' }}>
-                        <div className="glass rounded-3xl p-8 md:p-10 shadow-2xl hover:shadow-emerald-500/20 transition-all duration-500">
+                        <div className="glass rounded-3xl p-8 md:p-10 shadow-2xl hover:shadow-blue-500/20 transition-all duration-500">
                             <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
                                 About <span className="gradient-text">Me</span>
                             </h2>
@@ -59,13 +59,13 @@ const Hero = () => {
                                 <div className="flex flex-wrap gap-3 pt-4">
                                     <a
                                         href="#projects"
-                                        className="px-6 py-3 bg-gradient-to-r from-emerald-500 to-teal-500 text-white rounded-full font-medium hover:shadow-lg hover:shadow-emerald-500/40 transition-all duration-300 hover:-translate-y-1 hover:scale-105"
+                                        className="px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full font-medium hover:shadow-lg hover:shadow-blue-500/40 transition-all duration-300 hover:-translate-y-1 hover:scale-105"
                                     >
                                         View My Work
                                     </a>
                                     <a
                                         href="#contact"
-                                        className="px-6 py-3 glass text-gray-700 rounded-full font-medium hover:bg-white/90 transition-all duration-300 hover:-translate-y-1 hover:scale-105 border border-emerald-200"
+                                        className="px-6 py-3 glass text-gray-700 rounded-full font-medium hover:bg-white/90 transition-all duration-300 hover:-translate-y-1 hover:scale-105 border border-blue-200"
                                     >
                                         Get In Touch
                                     </a>
@@ -78,7 +78,7 @@ const Hero = () => {
 
             {/* Scroll indicator */}
             <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
-                <HiArrowDown className="w-6 h-6 text-emerald-600" />
+                <HiArrowDown className="w-6 h-6 text-blue-600" />
             </div>
         </section>
     );

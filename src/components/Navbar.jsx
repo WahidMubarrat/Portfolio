@@ -34,17 +34,17 @@ const Navbar = () => {
                         <a
                             key={link.name}
                             href={link.href}
-                            className="text-gray-700 hover:text-emerald-600 transition-colors duration-300 relative group font-medium"
+                            className="text-gray-700 hover:text-blue-600 transition-colors duration-300 relative group font-medium"
                         >
                             {link.name}
-                            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-emerald-500 to-teal-500 group-hover:w-full transition-all duration-300"></span>
+                            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 group-hover:w-full transition-all duration-300"></span>
                         </a>
                     ))}
                 </div>
 
                 {/* Mobile Menu Button */}
                 <button
-                    className="md:hidden text-gray-700 p-2 hover:text-emerald-600 transition-colors"
+                    className="md:hidden text-gray-700 p-2 hover:text-blue-600 transition-colors"
                     onClick={() => setIsOpen(!isOpen)}
                 >
                     {isOpen ? <HiX className="w-6 h-6" /> : <HiMenu className="w-6 h-6" />}
@@ -58,7 +58,7 @@ const Navbar = () => {
                         <a
                             key={link.name}
                             href={link.href}
-                            className="text-gray-700 hover:text-emerald-600 transition-colors font-medium"
+                            className="text-gray-700 hover:text-blue-600 transition-colors font-medium"
                             onClick={() => setIsOpen(false)}
                         >
                             {link.name}
