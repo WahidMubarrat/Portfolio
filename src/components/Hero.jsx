@@ -3,6 +3,18 @@ import { HiArrowDown } from 'react-icons/hi';
 const Hero = () => {
     return (
         <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden px-4">
+            {/* Top Banner */}
+            <div className="absolute top-0 left-0 right-0 py-6 px-4 z-10">
+                <div className="max-w-7xl mx-auto text-center">
+                    <h1 className="text-2xl md:text-3xl font-bold gradient-text">
+                        Wahid Mubarrat
+                    </h1>
+                    <p className="text-gray-600 mt-2 text-sm md:text-base">
+                        Software Engineer • Problem Solver • Innovation Enthusiast
+                    </p>
+                </div>
+            </div>
+
             {/* Background decoration */}
             <div className="absolute inset-0 overflow-hidden">
                 <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-blue-400/30 rounded-full blur-3xl animate-float"></div>
