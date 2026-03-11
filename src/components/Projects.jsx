@@ -13,7 +13,13 @@ const Projects = () => {
             githubLink: 'https://github.com/WahidMubarrat/EmerCare', 
             deployedLink: 'https://emer-carefrontend.vercel.app', 
         },
-        
+        {
+            title: 'LeaveTracker',
+            description: 'LeaveTracker is a role-based leave management platform that automates the entire leave application and approval workflow for academic organizations. It features a three-tier hierarchical approval system (Employee → HoD → HR), intelligent leave calculations excluding weekends and holidays, alternate employee assignment with consent tracking, and real-time status monitoring. The system includes comprehensive analytics dashboards, automated email notifications, document upload capabilities, and PDF-based holiday extraction using OCR technology. Built with the MERN stack, it eliminates paper-based processes while maintaining complete audit trails and providing organization-wide visibility into leave requests and approvals.',
+            technologies: ['React', 'Node.js', 'Express', 'MongoDB', 'JWT', 'Cloudinary', 'PDF Processing', 'Email Integration'],
+            githubLink: 'https://github.com/WahidMubarrat/LeaveTracker', 
+            deployedLink: 'https://leave-tracker-blue-delta.vercel.app', 
+        },
     ];
 
     const desktopProjects = [
@@ -40,7 +46,7 @@ const Projects = () => {
     return (
         <section id="projects" className="py-20 px-4">
             <div className="max-w-6xl mx-auto">
-                <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-12 text-center">
+                <h2 className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-12 text-center">
                     Featured <span className="gradient-text">Projects</span>
                 </h2>
 
@@ -102,13 +108,13 @@ const Projects = () => {
                     ></div>
 
                     {/* Modal Content */}
-                    <div className="relative bg-white/95 backdrop-blur-xl rounded-3xl shadow-2xl max-w-4xl w-full max-h-[85vh] overflow-y-auto p-8 animate-scaleIn border border-blue-200">
+                    <div className="relative bg-white/95 dark:bg-gray-800/95 backdrop-blur-xl rounded-3xl shadow-2xl max-w-4xl w-full max-h-[85vh] overflow-y-auto p-8 animate-scaleIn border border-blue-200 dark:border-blue-500">
                         {/* Close Button */}
                         <button
                             onClick={() => setShowWebModal(false)}
-                            className="absolute top-6 right-6 p-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors"
+                            className="absolute top-6 right-6 p-2 rounded-full bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
                         >
-                            <FaTimes className="w-5 h-5 text-gray-600" />
+                            <FaTimes className="w-5 h-5 text-gray-600 dark:text-gray-300" />
                         </button>
 
                         {/* Header */}
@@ -127,17 +133,17 @@ const Projects = () => {
                                         {project.title}
                                     </h3>
                                     
-                                    <p className="text-gray-700 leading-relaxed mb-4">
+                                    <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
                                         {project.description}
                                     </p>
 
                                     {/* Technologies */}
                                     {project.technologies && (
                                         <div className="mb-4">
-                                            <h4 className="text-sm font-semibold text-gray-600 mb-2">Technologies:</h4>
+                                            <h4 className="text-sm font-semibold text-gray-600 dark:text-gray-400 mb-2">Technologies:</h4>
                                             <div className="flex flex-wrap gap-2">
                                                 {project.technologies.map((tech, i) => (
-                                                    <span key={i} className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm">
+                                                    <span key={i} className="px-3 py-1 bg-blue-100 dark:bg-blue-900/50 text-blue-700 dark:text-blue-200 rounded-full text-sm font-medium">
                                                         {tech}
                                                     </span>
                                                 ))}
@@ -187,13 +193,13 @@ const Projects = () => {
                     ></div>
 
                     {/* Modal Content */}
-                    <div className="relative bg-white/95 backdrop-blur-xl rounded-3xl shadow-2xl max-w-4xl w-full max-h-[85vh] overflow-y-auto p-8 animate-scaleIn border border-purple-200">
+                    <div className="relative bg-white/95 dark:bg-gray-800/95 backdrop-blur-xl rounded-3xl shadow-2xl max-w-4xl w-full max-h-[85vh] overflow-y-auto p-8 animate-scaleIn border border-purple-200 dark:border-purple-500">
                         {/* Close Button */}
                         <button
                             onClick={() => setShowDesktopModal(false)}
-                            className="absolute top-6 right-6 p-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors"
+                            className="absolute top-6 right-6 p-2 rounded-full bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
                         >
-                            <FaTimes className="w-5 h-5 text-gray-600" />
+                            <FaTimes className="w-5 h-5 text-gray-600 dark:text-gray-300" />
                         </button>
 
                         {/* Header */}
@@ -207,7 +213,7 @@ const Projects = () => {
                         {/* Projects List */}
                         <div className="space-y-8">
                             {desktopProjects.length === 0 ? (
-                                <p className="text-gray-600 text-center py-8">
+                                <p className="text-gray-600 dark:text-gray-400 text-center py-8">
                                     Coming soon...
                                 </p>
                             ) : (
@@ -217,17 +223,17 @@ const Projects = () => {
                                             {project.title}
                                         </h3>
                                         
-                                        <p className="text-gray-700 leading-relaxed mb-4">
+                                        <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
                                             {project.description}
                                         </p>
 
                                         {/* Technologies */}
                                         {project.technologies && (
                                             <div className="mb-4">
-                                                <h4 className="text-sm font-semibold text-gray-600 mb-2">Technologies:</h4>
+                                                <h4 className="text-sm font-semibold text-gray-600 dark:text-gray-400 mb-2">Technologies:</h4>
                                                 <div className="flex flex-wrap gap-2">
                                                     {project.technologies.map((tech, i) => (
-                                                        <span key={i} className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">
+                                                        <span key={i} className="px-3 py-1 bg-purple-100 dark:bg-purple-900/50 text-purple-700 dark:text-purple-200 rounded-full text-sm font-medium">
                                                             {tech}
                                                         </span>
                                                     ))}

@@ -1,6 +1,6 @@
 import { HiArrowDown } from 'react-icons/hi';
 
-const Hero = () => {
+const About = () => {
     const handleContactClick = (e) => {
         e.preventDefault();
         // Add pulse animation class to contact sidebar
@@ -21,7 +21,7 @@ const Hero = () => {
                     <h1 className="text-2xl md:text-3xl font-bold gradient-text">
                         Wahid Mubarrat
                     </h1>
-                    <p className="text-gray-600 mt-2 text-sm md:text-base">
+                    <p className="text-gray-600 dark:text-gray-300 mt-2 text-sm md:text-base">
                         Software Engineer • Problem Solver • Innovation Enthusiast
                     </p>
                 </div>
@@ -34,8 +34,8 @@ const Hero = () => {
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-indigo-300/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
             </div>
 
-            <div className="max-w-7xl mx-auto w-full z-10 px-4 md:px-8 pt-24 md:pt-20">
-                <div className="grid md:grid-cols-[auto_1fr] gap-6 lg:gap-10 items-center max-w-6xl">
+            <div className="max-w-7xl mx-auto w-full z-10 px-4 md:px-8 pt-24 md:pt-20 pb-8">
+                <div className="flex flex-col md:grid md:grid-cols-[auto_1fr] gap-6 lg:gap-10 items-center max-w-6xl">
                     {/* Left Side - Round Picture (closer to navbar) */}
                     <div className="flex justify-center md:justify-start fade-in-up">
                         <div className="relative group">
@@ -51,9 +51,9 @@ const Hero = () => {
                     </div>
 
                     {/* Right Side - Comic Speech Bubble */}
-                    <div className="fade-in-up relative" style={{ animationDelay: '0.3s' }}>
+                    <div className="fade-in-up relative w-full" style={{ animationDelay: '0.3s' }}>
                         {/* Speech bubble tail - arrow pointing to picture */}
-                        <div className="absolute -left-8 top-1/3 hidden md:block">
+                        <div className="absolute -left-8 top-1/3 hidden lg:block">
                             <svg width="40" height="60" viewBox="0 0 40 60" className="drop-shadow-lg">
                                 <path d="M 40 10 Q 20 15, 5 25 Q 0 30, 5 35 Q 20 45, 40 50 Z" fill="rgba(255, 255, 255, 0.7)" />
                             </svg>
@@ -62,27 +62,27 @@ const Hero = () => {
                         <div className="glass rounded-3xl rounded-tl-sm p-5 md:p-7 shadow-2xl hover:shadow-blue-500/20 transition-all duration-500 animate-float">
                             <div className="space-y-5">
                                 <div>
-                                    <h3 className="text-2xl font-bold text-gray-800 mb-3 flex items-center gap-2">
+                                    <h3 className="text-2xl font-bold text-gray-800 dark:text-white mb-3 flex items-center gap-2">
                                         <span className="text-3xl">👋</span> Hey there!
                                     </h3>
-                                    <p className="text-gray-700 leading-relaxed text-lg">
+                                    <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-lg">
                                         Thanks for visiting my portfolio! I'm <span className="font-semibold gradient-text">Wahid Mubarrat</span>, 
                                         a passionate Software Engineering student who loves building innovative web and desktop applications.
                                     </p>
                                 </div>
 
-                                <div className="border-l-4 border-blue-500 pl-4 py-2 bg-blue-50/50 rounded">
-                                    <p className="text-gray-700 leading-relaxed">
+                                <div className="border-l-4 border-blue-500 pl-4 py-2 bg-blue-50/50 dark:bg-blue-900/20 rounded">
+                                    <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
                                         I turn complex problems into simple, beautiful, and intuitive solutions. 
                                         From concept to deployment, I bring ideas to life!
                                     </p>
                                 </div>
 
                                 <div>
-                                    <h4 className="text-lg font-semibold text-gray-800 mb-2 flex items-center gap-2">
+                                    <h4 className="text-lg font-semibold text-gray-800 dark:text-white mb-2 flex items-center gap-2">
                                         <span className="text-xl">💼</span> What I specialize in:
                                     </h4>
-                                    <ul className="space-y-2 text-gray-700">
+                                    <ul className="space-y-2 text-gray-700 dark:text-gray-300">
                                         <li className="flex items-start gap-2">
                                             <span className="text-blue-500 mt-1">▸</span>
                                             <span>Full stack web development</span>
@@ -99,7 +99,7 @@ const Hero = () => {
                                 </div>
 
                                 <div className="pt-2">
-                                    <p className="text-gray-600 italic mb-4">
+                                    <p className="text-gray-600 dark:text-gray-400 italic mb-4">
                                         🚀 Ready to explore my work and skills? Let's dive in!
                                     </p>
                                 </div>
@@ -113,7 +113,7 @@ const Hero = () => {
                                     </a>
                                     <button
                                         onClick={handleContactClick}
-                                        className="px-6 py-3 glass text-gray-700 rounded-full font-medium hover:bg-white/90 transition-all duration-300 hover:-translate-y-1 hover:scale-105 border border-blue-200"
+                                        className="px-6 py-3 glass text-gray-700 dark:text-white rounded-full font-medium hover:bg-white/90 dark:hover:bg-gray-700/90 transition-all duration-300 hover:-translate-y-1 hover:scale-105 border border-blue-200 dark:border-gray-600"
                                     >
                                         Get In Touch
                                     </button>
@@ -132,4 +132,4 @@ const Hero = () => {
     );
 };
 
-export default Hero;
+export default About;
