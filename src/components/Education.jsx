@@ -1,36 +1,70 @@
-import { useState } from 'react';
-import { HiChevronDown } from 'react-icons/hi';
+import { useRef, useState, useEffect } from 'react';
+import { HiChevronLeft, HiChevronRight, HiOutlineArrowRight } from 'react-icons/hi';
 
 const Education = () => {
-    const [isExpanded, setIsExpanded] = useState(false);
+    const scrollRef = useRef(null);
+    const [canScrollLeft, setCanScrollLeft] = useState(false);
+    const [canScrollRight, setCanScrollRight] = useState(false);
 
     const educationData = [
         {
             degree: 'Bachelor of Science in Software Engineering',
             institution: 'Islamic University of Technology (IUT)',
             period: '2023 - Present',
-            description: 'Currently pursuing BScin Software Engineering, focusing on software development, algorithms, and system design.',
+            description:
+                'Currently pursuing BSc in Software Engineering, focusing on software development, algorithms, and system design.',
             status: 'ongoing',
+            icon: '🎓',
         },
         {
             degree: 'Higher Secondary Certificate (HSC)',
             institution: 'Dhaka City College',
             period: '2020 - 2022',
-            description: 'Completed higher secondary education with a focus on Science.',
+            description:
+                'Completed higher secondary education with a focus on Science.',
             status: 'completed',
+            icon: '📘',
         },
         {
             degree: 'Secondary School Certificate (SSC)',
-            institution: 'Your School Name',
+            institution: 'Government Laboratory High School,Dhaka',
             period: '2010 - 2020',
-            description: 'Completed secondary education with with a focus on Science.',
+            description:
+                'Completed secondary education with a focus on Science.',
             status: 'completed',
+            icon: '📗',
         },
     ];
 
-    // Filter ongoing and completed education
-    const ongoingEducation = educationData.filter(edu => edu.status === 'ongoing');
-    const completedEducation = educationData.filter(edu => edu.status === 'completed');
+    const checkScrollability = () => {
+        const el = scrollRef.current;
+        if (!el) return;
+        setCanScrollLeft(el.scrollLeft > 0);
+        setCanScrollRight(el.scrollLeft + el.clientWidth < el.scrollWidth - 2);
+    };
+
+    useEffect(() => {
+        checkScrollability();
+        const el = scrollRef.current;
+        if (el) {
+            el.addEventListener('scroll', checkScrollability);
+            window.addEventListener('resize', checkScrollability);
+        }
+        return () => {
+            if (el) el.removeEventListener('scroll', checkScrollability);
+            window.removeEventListener('resize', checkScrollability);
+        };
+    }, []);
+
+    const scroll = (direction) => {
+        const el = scrollRef.current;
+        if (!el) return;
+        const cardWidth = el.querySelector('.edu-card')?.offsetWidth || 340;
+        el.scrollBy({
+            left: direction === 'left' ? -cardWidth - 40 : cardWidth + 40,
+            behavior: 'smooth',
+        });
+    };
 
     return (
         <section id="education" className="py-20 px-4">
@@ -39,58 +73,96 @@ const Education = () => {
                     My <span className="gradient-text">Education</span>
                 </h2>
 
-                {/* Single White Box for All Education */}
-                <div className="glass rounded-2xl p-6 hover:shadow-lg transition-all duration-300">
-                    {/* Current Education - Always Visible */}
-                    <div className="mb-6">
-                        {ongoingEducation.map((item, index) => (
-                            <div key={index} className="pb-6 border-b border-gray-200 dark:border-gray-600">
-                                <div className="flex items-center gap-2 mb-2">
-                                    <span className="px-3 py-1 rounded-full text-xs font-medium bg-blue-500/20 dark:bg-blue-500/30 text-blue-700 dark:text-blue-300">
-                                        🎓 Ongoing
-                                    </span>
-                                    <span className="text-gray-500 dark:text-gray-400 text-sm">{item.period}</span>
-                                </div>
-                                <h3 className="text-xl font-semibold text-gray-800 dark:text-white mb-2 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
-                                    {item.degree}
-                                </h3>
-                                <p className="text-purple-600 dark:text-purple-400 mb-3 font-medium">{item.institution}</p>
-                                <p className="text-gray-600 dark:text-gray-400 text-sm">{item.description}</p>
-                            </div>
-                        ))}
-                    </div>
-
-                    {/* Completed Education - Expandable */}
-                    <div className={`overflow-hidden transition-all duration-500 ${isExpanded ? 'max-h-[2000px] opacity-100' : 'max-h-0 opacity-0'}`}>
-                        <div className="space-y-6 pt-2">
-                            {completedEducation.map((item, index) => (
-                                <div key={index} className={`${index < completedEducation.length - 1 ? 'pb-6 border-b border-gray-200 dark:border-gray-600' : ''}`}>
-                                    <div className="flex items-center gap-2 mb-2">
-                                        <span className="px-3 py-1 rounded-full text-xs font-medium bg-purple-500/20 dark:bg-purple-500/30 text-purple-700 dark:text-purple-300">
-                                            ✓ Completed
-                                        </span>
-                                        <span className="text-gray-500 dark:text-gray-400 text-sm">{item.period}</span>
-                                    </div>
-                                    <h3 className="text-xl font-semibold text-gray-800 dark:text-white mb-2 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
-                                        {item.degree}
-                                    </h3>
-                                    <p className="text-purple-600 dark:text-purple-400 mb-3 font-medium">{item.institution}</p>
-                                    <p className="text-gray-600 dark:text-gray-400 text-sm">{item.description}</p>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-
-                    {/* Expand/Collapse Button */}
-                    <div className="flex justify-start mt-6 pt-6 border-t border-gray-200 dark:border-gray-600">
+                {/* Timeline wrapper */}
+                <div className="edu-timeline-wrapper">
+                    {/* Left fade + arrow */}
+                    <div
+                        className={`edu-fade edu-fade--left ${canScrollLeft ? 'visible' : ''}`}
+                    >
                         <button
-                            onClick={() => setIsExpanded(!isExpanded)}
-                            className="flex items-center gap-2 px-6 py-2 bg-white/50 dark:bg-gray-700/50 rounded-xl text-gray-700 dark:text-gray-300 hover:bg-white/80 dark:hover:bg-gray-600/80 hover:text-blue-600 dark:hover:text-blue-400 hover:shadow-md transition-all duration-300"
+                            onClick={() => scroll('left')}
+                            className="edu-arrow"
+                            aria-label="Scroll left"
                         >
-                            <span className="font-medium text-sm">
-                                {isExpanded ? 'Show Less' : 'View More Education'}
-                            </span>
-                            <HiChevronDown className={`w-4 h-4 transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`} />
+                            <HiChevronLeft className="w-5 h-5" />
+                        </button>
+                    </div>
+
+                    {/* Scrollable track */}
+                    <div className="edu-scroll-track" ref={scrollRef}>
+                        {/* Connecting line */}
+                        <div className="edu-timeline-line" />
+
+                        {[...educationData].reverse().map((item, index, arr) => {
+                            const parts = item.period.split('-');
+                            const startYear = parts[0]?.trim();
+                            const endYear = parts[1]?.trim();
+
+                            return (
+                                <div
+                                    key={index}
+                                    className={`edu-card glass rounded-2xl ${item.status === 'ongoing' ? 'edu-card--current' : ''}`}
+                                    style={{ animationDelay: `${index * 0.15}s` }}
+                                >
+                                    {/* Start and End Years on Timeline */}
+                                    <div className="edu-year edu-year-start">{startYear}</div>
+                                    <div className={`edu-dot ${item.status === 'ongoing' ? 'edu-dot--active' : ''}`} />
+                                    <div className="edu-year edu-year-end">{endYear}</div>
+
+                                    {/* Connector Arrow */}
+                                    {index < arr.length - 1 && (
+                                        <div className="edu-arrow-connector">
+                                            <HiOutlineArrowRight className="w-5 h-5" />
+                                        </div>
+                                    )}
+
+                                    {/* Card content */}
+                                    <div className="edu-card-inner">
+                                        <div className="flex items-center gap-2 mb-3">
+                                            <span
+                                                className={`px-3 py-1 rounded-full text-xs font-semibold tracking-wide ${
+                                                    item.status === 'ongoing'
+                                                        ? 'bg-blue-500/20 dark:bg-blue-500/30 text-blue-700 dark:text-blue-300'
+                                                        : 'bg-purple-500/20 dark:bg-purple-500/30 text-purple-700 dark:text-purple-300'
+                                                }`}
+                                            >
+                                                {item.status === 'ongoing'
+                                                    ? '🎓 Ongoing'
+                                                    : '✓ Completed'}
+                                            </span>
+                                        </div>
+
+                                        <span className="text-xs font-medium text-gray-400 dark:text-gray-500 uppercase tracking-widest mb-2 block">
+                                            {item.period}
+                                        </span>
+
+                                        <h3 className="text-lg font-bold text-gray-800 dark:text-white mb-2 leading-snug">
+                                            {item.degree}
+                                        </h3>
+
+                                        <p className="text-sm font-semibold text-purple-600 dark:text-purple-400 mb-3">
+                                            {item.institution}
+                                        </p>
+
+                                        <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+                                            {item.description}
+                                        </p>
+                                    </div>
+                                </div>
+                            );
+                        })}
+                    </div>
+
+                    {/* Right fade + arrow */}
+                    <div
+                        className={`edu-fade edu-fade--right ${canScrollRight ? 'visible' : ''}`}
+                    >
+                        <button
+                            onClick={() => scroll('right')}
+                            className="edu-arrow"
+                            aria-label="Scroll right"
+                        >
+                            <HiChevronRight className="w-5 h-5" />
                         </button>
                     </div>
                 </div>
